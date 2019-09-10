@@ -1,0 +1,11 @@
+Homepage Title=
+Flight, Cheap Air Tickets , Hotels, Holiday, Trains Package Booking - Yatra.com
+
+SelectFlight Title=
+Yatra.com | Mumbai to Bangalore flights
+
+ReviewBooking Title=
+Yatra.com | Book your flight in 3 simple steps
+
+Payment-page Title=
+Payment Page
