@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -23,6 +24,8 @@ public class TestBase1 extends Extent {
 			System.setProperty("webdriver.chrome.driver", "./lib/chromedriver.exe");
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
+//			Assert.assertEquals(text, city, "Entered city is wrong");
+//			System.out.println("Entered city is right");
 			break;
 		case "firefox":
 			System.setProperty("webdriver.gecko.driver", "./lib/geckodriver.exe");

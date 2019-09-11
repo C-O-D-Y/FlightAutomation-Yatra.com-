@@ -74,9 +74,8 @@ public class CommonUtility {
 		});
 	}
 
-	public static WebElement getElement(WebDriver driver, String xpath, String text) {
+	public static WebElement getElement(WebDriver driver, String xpath) {
 		WebElement element = driver.findElement(By.xpath(xpath));
-		element.sendKeys(text);
 		return element;
 	}
 
@@ -95,6 +94,23 @@ public class CommonUtility {
 			isDisplayed = false;
 		}
 		return isDisplayed;
+	}
+	
+	/**
+	 * method takes parameters as
+	 * 
+	 * @param driver
+	 * @param XPathIsSelected
+	 * @return a boolean value for the selected element on the web page
+	 */
+	public static boolean isSelected(WebDriver driver, String XPathIsSelected) {
+		boolean isSelected = false;
+		try {
+			isSelected = driver.findElement(By.xpath(XPathIsSelected)).isSelected();
+		} catch (Exception e) {
+			isSelected = false;
+		}
+		return isSelected;
 	}
 
 	/**

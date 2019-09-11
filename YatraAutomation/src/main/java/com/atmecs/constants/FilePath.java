@@ -11,6 +11,7 @@ public class FilePath {
 	public final static String LIB_HOME = USER_HOME + "lib" + File.separator;
 
 	public final static String CONFIG_FILE = RESOURCES_HOME + "testData" + File.separator + "config.properties";
+	public final static String VALIDATION_FILE = RESOURCES_HOME + "testData" + File.separator + "validation.properties";
 	public final static String CHROME_PATH = LIB_HOME + "chromedriver.exe";
 	public final static String FIREFOX_PATH = LIB_HOME + "geckodriver.exe";
 	public final static String IE_PATH = LIB_HOME + "IEDriver.exe";

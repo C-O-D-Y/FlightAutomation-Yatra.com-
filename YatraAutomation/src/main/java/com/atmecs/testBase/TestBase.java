@@ -12,10 +12,9 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.BeforeSuite;
 
 import com.atmecs.constants.FilePath;
-import com.atmecs.extentReports.Extent;
 import com.atmecs.utils.ReadPropertiesFile;
 
-public class TestBase extends Extent{
+public class TestBase {
 	public static WebDriver driver;
 	Properties baseClass;
 	String url;
@@ -52,7 +51,6 @@ public class TestBase extends Extent{
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
-
 		}
 	}
 }
