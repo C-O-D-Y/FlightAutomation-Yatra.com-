@@ -49,7 +49,6 @@ public class TestBase {
 			}
 			driver.get(url);
 			driver.manage().window().maximize();
-			driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
 		}
 	}

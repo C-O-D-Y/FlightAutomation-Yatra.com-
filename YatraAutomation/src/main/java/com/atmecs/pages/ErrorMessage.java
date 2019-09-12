@@ -28,15 +28,13 @@ public class ErrorMessage {
 				Assert.assertEquals(element, ValidatingData.getValidatingData("Mobile number is required."),
 						"message is not dispalyed");
 			} else if (initial == 2) {
-				Assert.assertEquals(element, ValidatingData.getValidatingData("Required."),
-						"message is not dispalyed");
+				Assert.assertEquals(element, ValidatingData.getValidatingData("Required."), "message is not dispalyed");
 			} else if (initial == 3) {
-				Assert.assertEquals(element, ValidatingData.getValidatingData("First\r\n" + 
-						"							name is required."),
+				Assert.assertEquals(element,
+						ValidatingData.getValidatingData("First\r\n" + "							name is required."),
 						"message is not dispalyed");
 			}
 		}
 		System.out.println("Flight timings are correct");
-		}
 	}
 }

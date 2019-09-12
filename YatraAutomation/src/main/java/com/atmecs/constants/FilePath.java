@@ -7,7 +7,7 @@ public class FilePath {
 	public final static String USER_HOME = System.getProperty("user.dir") + File.separator;
 	public final static String RESOURCES_HOME = USER_HOME + "src" + File.separator + "test" + File.separator
 			+ "resources" + File.separator;
-	public final static String LOCATOR_HOME = RESOURCES_HOME + "locators" + File.separator;
+	public final static String LOCATOR_HOME = RESOURCES_HOME + "locators" + File.separator+"yatrahomepage.properties";
 	public final static String LIB_HOME = USER_HOME + "lib" + File.separator;
 
 	public final static String CONFIG_FILE = RESOURCES_HOME + "testData" + File.separator + "config.properties";

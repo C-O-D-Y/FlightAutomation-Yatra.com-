@@ -24,9 +24,7 @@ public class HomePage {
 	 */
 	public void isRedirectionCorrect(WebDriver driver) {
 
-		WebElement element = (WebElement) CommonUtility.getElementsList(driver,
-				YatraFlightBookingLocators.getLocators("loc.homepageTitle"));
-		String title = element.getText();
+		String title = CommonUtility.getTitle(driver);
 		Assert.assertEquals(title, "Flight, Cheap Air Tickets , Hotels, Holiday, Trains Package Booking - Yatra.com",
 				"Redirection is not on the correct page");
 		System.out.println("Redirection is on the correct page");
@@ -38,7 +36,7 @@ public class HomePage {
 	 * 
 	 * @param driver
 	 */
-	public static boolean isButtonDisplayed(WebDriver driver) {
+	public boolean isButtonDisplayed(WebDriver driver) {
 		BasicConfigurator.configure();
 		boolean status = false;
 		status = CommonUtility.isElementVisible(driver, YatraFlightBookingLocators.getLocators("loc.btn.returnDate"));
@@ -55,8 +53,8 @@ public class HomePage {
 	 * @param driver
 	 * @return
 	 */
-	public static List<String> changesInElement(WebDriver driver) {
-		List<String> stringelement = new ArrayList<>();
+	public List<String> changesInElement(WebDriver driver) {
+		List<String> stringelement = new ArrayList<String>();
 		List<WebElement> element = CommonUtility.getElementsList(driver, "//p[@class='custom-autoTxt']");
 		for (WebElement webelement : element) {
 			stringelement.add(webelement.getText());

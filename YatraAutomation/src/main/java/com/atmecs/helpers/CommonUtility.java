@@ -7,12 +7,16 @@ import java.util.function.Function;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.atmecs.constants.TimeOut;
 
 public class CommonUtility {
 	/**
@@ -25,7 +29,7 @@ public class CommonUtility {
 
 	public static void clickElement(WebDriver driver, final String xpath) {
 		FluentWait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver)
-				.ignoring(ElementClickInterceptedException.class).pollingEvery(1, TimeUnit.SECONDS)
+				.ignoring(ElementClickInterceptedException.class).pollingEvery(3, TimeUnit.SECONDS)
 				.withTimeout(30, TimeUnit.SECONDS);
 		fluentWait.until(new Function<WebDriver, Boolean>() {
 			public Boolean apply(WebDriver driver) {
@@ -95,7 +99,7 @@ public class CommonUtility {
 		}
 		return isDisplayed;
 	}
-	
+
 	/**
 	 * method takes parameters as
 	 * 
@@ -158,4 +162,23 @@ public class CommonUtility {
 		js.executeScript(scroll);
 	}
 
+	public static void action(WebDriver driver) {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ENTER).build().perform();
+	}
+
+	public static void clearField(WebDriver driver, String xpath) {
+		driver.findElement(By.xpath(xpath)).clear();
+	}
+
+	public static String getTitle(WebDriver driver) {
+		String title = driver.getTitle();
+		return title;
+	}
+
+	public static void explicitWait(WebDriver driver, String xpath) {
+
+		WebDriverWait wait = new WebDriverWait(driver, TimeOut.TIMEOUT_INSECONDS);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+	}
 }

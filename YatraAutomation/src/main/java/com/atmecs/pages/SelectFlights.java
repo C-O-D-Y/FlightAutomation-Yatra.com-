@@ -2,7 +2,6 @@ package com.atmecs.pages;
 
 import org.apache.log4j.BasicConfigurator;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.atmecs.constants.YatraFlightBookingLocators;
@@ -22,10 +21,9 @@ public class SelectFlights {
 	 */
 	public void isRedirectionCorrect(WebDriver driver) {
 
-		WebElement element = (WebElement) CommonUtility.getElementsList(driver,
-				YatraFlightBookingLocators.getLocators("loc.selectFlightPageTitle"));
-		String title = element.getText();
-		Assert.assertEquals(title, "Yatra.com | Mumbai to Bangalore flights", "Redirection is not on the correct page");
+		String title = CommonUtility.getTitle(driver);
+		System.out.println(title);
+		Assert.assertEquals(title, "Yatra.com | Bengaluru to Mumbai flights", "Redirection is not on the correct page");
 		System.out.println("Redirection is on the correct page");
 	}
 
@@ -35,7 +33,7 @@ public class SelectFlights {
 	 * @param driver
 	 * @param xpath
 	 */
-	public static boolean isButtonDisplayed(WebDriver driver, String xpath) {
+	public boolean isButtonDisplayed(WebDriver driver, String xpath) {
 		BasicConfigurator.configure();
 		boolean selected = false;
 		selected = CommonUtility.isSelected(driver, YatraFlightBookingLocators.getLocators(xpath));
